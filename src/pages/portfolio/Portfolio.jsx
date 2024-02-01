@@ -2,6 +2,9 @@ import { Experience, Hero } from "../../components";
 import { Navbar } from "../../components/Navbar";
 import  About  from "../../components/About";
 import Skills from "../../components/Skills";
+import Works from "../../components/Works";
+import Contact from "../../components/Contact";
+import StarsCanvas from "../../components/canvas/Stars";
 
 export const Portfolio = () => {
   return (
@@ -16,15 +19,15 @@ export const Portfolio = () => {
 
   
         <About />
-        <Skills/>
+     
      
       {/* <Experience/> */}
       {/* <Tech/> */}
-      {/* <Works/> */}
+      <Works/>
       {/* <Feedbacks/> */}
       <div className="relative z-0">
-        {/* <Contact/> */}
-        {/* <StarsCanvas/> */}
+        <Contact/>
+        <StarsCanvas/>
       </div>
     </div>
   );

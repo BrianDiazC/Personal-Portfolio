@@ -3,14 +3,16 @@ import { styles } from '../styles'
 import { textVariant, fadeIn } from '../utils/motion';
 import { technologies } from "../constants/data";
 import { Tilt } from 'react-tilt';
+import { SectionWrapper } from "../hoc"; 
+
 
 const variants = {
     hidden: {},
     show: {
-        transition: {
-            staggerChildren: 2,
-                delayChildren: 0.1
-        }
+        // transition: {
+        //     staggerChildren: 2,
+        //         delayChildren: 0.1
+        // }
     }
 }
 
@@ -18,19 +20,16 @@ const variants = {
 const SingleSkill = ({tech, index}) => {
     return (
         <Tilt options={{
-            max:40,
+            max:50,
             speed: 50
         }}>
             <motion.div
             variants={fadeIn("right", "spring", 0.1 * index, 0.75)}
-            className='w-36 '
+            className='w-28 h-28 rounded-md p-1 mt-1 bg-white bg-opacity-10 shadow-card'
             >
-                <img src={tech.icon} alt={tech.name} />
-
-                <div>
-                    <p className='font-bold text-center '>{tech.name}</p>
-                </div>
-
+                <img className='w-full h-full block object-contain' src={tech.icon} alt={tech.name} />
+                <p className='font-bold text-center mt-1 text-gray-300'>{tech.name}</p>
+    
             </motion.div>
             
     
@@ -43,25 +42,23 @@ const Skills = () => {
   return (
   <>
       <motion.div variants={textVariant()}>
-    <h2 className={styles.sectionHeadText}>Skills</h2>
+    <h3 className={`font-bold text-[40px] md:text-[50px]`}>Skills</h3>
+    {/* ${styles.sectionHeadText} */}
   </motion.div>
 
     <motion.div 
-    initial="hidden"
-    variants={variants}
-    whileInView={'show'}
-    viewport={{amount:0.50}}
-
-    className='flex flex-wrap gap-4 mt-4'
+    className='flex flex-wrap gap-4 gap-y-10  mt-4'
     options={{
         max:30,
         speed: 50
-        
     }}
     >
         {
             technologies.map((tech, index)=> (
-                <SingleSkill tech={tech} index={index} />
+                <SingleSkill
+                key={tech.icon} 
+                tech={tech} 
+                index={index} />
             ))
         }
         
@@ -73,4 +70,4 @@ const Skills = () => {
   )
 }
 
-export default Skills
+export default SectionWrapper(Skills, '');

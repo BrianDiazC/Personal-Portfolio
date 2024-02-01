@@ -18,7 +18,7 @@ const icons = [
 
 export const HeroMenu = () => {
   return (
-    <div className="   flex w-16 flex-col items-center space-y-10 py-6 fixed inset-y-1/2 right-0 ">
+    <div className="w-16 flex-col items-center space-y-10 py-6 fixed inset-y-1/2 right-0 hidden 2xl:flex ">
       <div className="space-y-48 rounded-md bg-tertiary ">
         <ul>
           {icons.map((icon, index) => (

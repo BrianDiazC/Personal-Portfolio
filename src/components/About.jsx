@@ -4,6 +4,7 @@ import { styles } from "../styles";
 import { services } from "../constants/data";
 import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc"; 
+import Skills from "./Skills";
 
 
 const ServiceCard = ({ index, title, icon }) => {
@@ -54,6 +55,7 @@ const ServiceCard = ({ index, title, icon }) => {
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
+      <Skills/>
     </>
   );
 };

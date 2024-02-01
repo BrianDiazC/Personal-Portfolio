@@ -14,6 +14,7 @@ import * as THREE from "three";
 import { useAtom } from "jotai";
 import { currentPageAtom } from "./UI";
 
+
 const bloomColor = new THREE.Color("#fff");
 bloomColor.multiplyScalar(1.5);
 
@@ -153,4 +154,4 @@ export const Experience = () => {
   );
 };
 
-useFont.preload("fonts/Poppins-Black.ttf");
+useFont.preload("./fonts/Poppins-Black.ttf");

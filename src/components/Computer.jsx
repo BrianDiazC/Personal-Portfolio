@@ -11,7 +11,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
   export const Computer = (props) => {
-  const { nodes, materials } = useGLTF('models/desktop_pc/scene.gltf');
+  const { nodes, materials } = useGLTF('./models/desktop_pc/scene.gltf');
   return (
     <group {...props} dispose={null}>
       <group scale={0.01}>
@@ -705,4 +705,4 @@ import { useGLTF } from '@react-three/drei'
   )
 }
 
-useGLTF.preload('models/desktop_pc/scene.gltf');
+useGLTF.preload('./models/desktop_pc/scene.gltf');
